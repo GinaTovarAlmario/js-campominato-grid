@@ -22,21 +22,27 @@ Aggiungere una select accanto al bottone di generazione, che fornisca una scelta
 - con difficoltà 2 => 81 caselle, con un numero compreso tra 1 e 81, divise in 9 caselle per 9 righe;
 - con difficoltà 3 => 49 caselle, con un numero compreso tra 1 e 49, divise in 7 caselle per 7 righe;*/
 // FASE DI PREPARAZIONE
-// vado a recuperarmi la griglia del DOM
+// vado a recuperarmi la griglia del DOM ei bottone
 const grid = document.getElementById('grid');
+const playButton = document.getElementById('play');
 // so che ho bisogno di una griglia 10x10
 // FASE DI RACCOLTA DATI
 const rows = 10;
 const cols = 10;
 const totalCells = rows * cols;
 // FASE DI ELABORAZIONE DATI
-// ora devo generare la mia griglia
-for(let i = 0; i < totalCells; i++){
-    // mi serve andare a creare una funzione che mi crei le celle
-    // invoco la funzione creata
-    const cell = createCell(i + 1);
-    // devo inserire la cella in pagina
-    grid.appendChild(cell);
-    // ora devo inserire i numeri da 1 a 100 nelle mie celle. Devo andare a modificare la mia funzione e passargli un contenuto
-}
-// FASE DI OUTPUT
+// al click sul bottone play mi genera le celle e il suo contenuto
+playButton.addEventListener('click', function(){
+    // devo svuotare la mia griglia per evitare che ogni volta che clicco play vada ad aggiungere griglie
+    grid.innerHTML = '';
+    // ora devo generare la mia griglia
+    for(let i = 0; i < totalCells; i++){
+        // mi serve andare a creare una funzione che mi crei le celle
+        // invoco la funzione creata
+        const cell = createCell(i + 1);
+        // devo inserire la cella in pagina
+        // FASE DI OUTPUT
+        grid.appendChild(cell);
+        // ora devo inserire i numeri da 1 a 100 nelle mie celle. Devo andare a modificare la mia funzione e passargli un contenuto
+    }
+});

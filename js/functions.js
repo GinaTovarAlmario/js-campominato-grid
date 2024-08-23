@@ -8,10 +8,13 @@
 // DICHIARAZIONE DI FUNZIONE
 /**
  * WITH THIS FUNCTION WE CREATE AN ELEMENT TYPE DIV WITH A CLASS NAMED CELL
+ *
  * @returns <div class="cell"> </div>
  */
-function createCell(){
+function createCell(content){
     const cell = document.createElement('div');
     cell.className = 'cell';
+    // devo aggiungere il contenuto alla mia cella
+    cell.append(content);
     return cell;
 }

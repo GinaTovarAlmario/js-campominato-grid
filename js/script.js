@@ -34,8 +34,9 @@ const totalCells = rows * cols;
 for(let i = 0; i < totalCells; i++){
     // mi serve andare a creare una funzione che mi crei le celle
     // invoco la funzione creata
-    const cell = createCell();
+    const cell = createCell(i + 1);
     // devo inserire la cella in pagina
     grid.appendChild(cell);
+    // ora devo inserire i numeri da 1 a 100 nelle mie celle. Devo andare a modificare la mia funzione e passargli un contenuto
 }
 // FASE DI OUTPUT

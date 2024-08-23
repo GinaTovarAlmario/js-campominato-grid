@@ -56,6 +56,10 @@ body{
     display: flex;
     flex-wrap: wrap;
 }
+/* mi serve una classe che cambi il backgroun d coloro in blu */
+.cell.clicked{
+    background-color: blue;
+}
 /* UTILITIES */
 .container{
     max-width: 1200px;

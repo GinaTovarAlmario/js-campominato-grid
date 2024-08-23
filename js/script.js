@@ -43,6 +43,15 @@ playButton.addEventListener('click', function(){
         // devo inserire la cella in pagina
         // FASE DI OUTPUT
         grid.appendChild(cell);
+        cell.addEventListener('click', function(){
+            // Al click sulla cella, stampiamo il numero della cella cliccata in console e coloriamo di azzurro
+            cell.classList.add('clicked');
+            // stampa in console il numero cella
+            console.log('Numero cella cliccata: ',i + 1);
+            
+        });
         // ora devo inserire i numeri da 1 a 100 nelle mie celle. Devo andare a modificare la mia funzione e passargli un contenuto
     }
 });
+// aggiugno un eventlistener alla cella
+

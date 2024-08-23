@@ -13,11 +13,19 @@
 </head>
 <body>
     <header>
-        <div class="title-left">
+        <div class = "title-left">
             <img src="img/logo.jpg" alt="logo">
             <h1> CAMPO MINATO</h1>
         </div>
-        <div title="title-right">
+        <div class = "title-right">
+            <form>
+                <label for="level">Difficoltà : </label>
+                <select name="level" id="level" style="width:150px">
+                    <option value ="hardlevel">Hard</option>
+                    <option value ="mediumlevel">Medium</option>
+                    <option value ="easylevel">Easy</option>
+                </select>
+            </form>
             <button id="play" class="btn">Play</button>
         </div>
     </header>

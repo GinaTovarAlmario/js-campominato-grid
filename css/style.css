@@ -30,10 +30,15 @@ body{
     flex-basis: 60%;
     gap: 10px;
     align-items: center;
+    padding-left: 20px;
 }
 .title-right{
     flex-basis: 40%;
-    margin-right: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+    padding-right: 20px;
 }
 .btn{
     padding: 2px 25px;
@@ -41,13 +46,23 @@ body{
     border-radius: 5px;
 }
 .cell{
-    height: calc(100% / 10);
-    flex-basis: calc(100% / 10);
     border: 1px solid black;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+.cell.total-cells-100{
+    height: calc(100% / 10);
+    flex-basis: calc(100% / 10);    
+}
+.cell.total-cells-81{
+    height: calc(100% / 9);
+    flex-basis: calc(100% / 9);
+}
+.cell.total-cells-49{
+    height: calc(100% / 7);
+    flex-basis: calc(100% / 7);
 }
 #grid{
     width: 350px;

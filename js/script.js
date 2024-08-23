@@ -21,37 +21,45 @@ Aggiungere una select accanto al bottone di generazione, che fornisca una scelta
 - con difficoltà 1 => 100 caselle, con un numero compreso tra 1 e 100, divise in 10 caselle per 10 righe;
 - con difficoltà 2 => 81 caselle, con un numero compreso tra 1 e 81, divise in 9 caselle per 9 righe;
 - con difficoltà 3 => 49 caselle, con un numero compreso tra 1 e 49, divise in 7 caselle per 7 righe;*/
+
 // FASE DI PREPARAZIONE
+
 // vado a recuperarmi la griglia del DOM ei bottone
 const grid = document.getElementById('grid');
 const playButton = document.getElementById('play');
-// so che ho bisogno di una griglia 10x10
+// vado a recuperarmi gli elementi della select del form
+const form = document.querySelector('form');
+const select = document.querySelector('select');
+
 // FASE DI RACCOLTA DATI
-const rows = 10;
-const cols = 10;
-const totalCells = rows * cols;
+
 // FASE DI ELABORAZIONE DATI
+
 // al click sul bottone play mi genera le celle e il suo contenuto
 playButton.addEventListener('click', function(){
+    console.log(select.value);
     // devo svuotare la mia griglia per evitare che ogni volta che clicco play vada ad aggiungere griglie
     grid.innerHTML = '';
+    // prima di generare le celle devo sapere il livello di difficoltà scelto dall'utente
+    const totalCells = computeTotalCells(select.value);
+
     // ora devo generare la mia griglia
     for(let i = 0; i < totalCells; i++){
         // mi serve andare a creare una funzione che mi crei le celle
         // invoco la funzione creata
-        const cell = createCell(i + 1);
+        const cell = createCell(i + 1 , totalCells );
         // devo inserire la cella in pagina
-        // FASE DI OUTPUT
+
+    // FASE DI OUTPUT
         grid.appendChild(cell);
+
+        // aggiugno un eventlistener alla cella
         cell.addEventListener('click', function(){
             // Al click sulla cella, stampiamo il numero della cella cliccata in console e coloriamo di azzurro
             cell.classList.add('clicked');
             // stampa in console il numero cella
             console.log('Numero cella cliccata: ',i + 1);
-            
         });
-        // ora devo inserire i numeri da 1 a 100 nelle mie celle. Devo andare a modificare la mia funzione e passargli un contenuto
     }
 });
-// aggiugno un eventlistener alla cella
 
